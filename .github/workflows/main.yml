@@ -1,0 +1,13 @@
+name: Build test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up test
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Build test test
+        run: mvn -B package --file pom.xml
